@@ -148,3 +148,7 @@ along with GCC; see the file COPYING3.  If not see
 /* We should find a way to not have to update this manually.  */
 #define LIBGCJ_SONAME "cyggcj" /*LIBGCC_EH_EXTN*/ "-15.dll"
 
+/* Make stack executable to avoid DEP problems with trampolines.  */
+#define HAVE_ENABLE_EXECUTE_STACK
+#undef  CHECK_EXECUTE_STACK_ENABLED
+#define CHECK_EXECUTE_STACK_ENABLED flag_setstackexecutable
