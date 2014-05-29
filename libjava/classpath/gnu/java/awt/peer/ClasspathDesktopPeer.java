@@ -58,7 +58,7 @@ public class ClasspathDesktopPeer
     implements DesktopPeer
 {
   /** This is the fallback browser, if no desktop was detected. */
-  protected static final String _DEFAULT_BROWSER = "firefox";
+  protected static final String _DEFAULT_BROWSER = "xdg-open";
 
   /** gnu.java.awt.peer.Desktop.html.command */
   protected static final String _BROWSE = "html";

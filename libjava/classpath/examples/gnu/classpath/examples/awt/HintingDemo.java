@@ -211,7 +211,7 @@ public class HintingDemo extends JFrame {
 
   HintingDemo()
   {
-    File file = new File("/usr/share/fonts/truetype/freefont/FreeSans.ttf");
+    File file = new File("/usr/share/fonts/TTF/Vera.ttf");
     loadFont(file);
     setLayout(new BorderLayout());
     chooser = new Chooser();
