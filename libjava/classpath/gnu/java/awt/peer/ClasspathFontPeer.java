@@ -158,6 +158,8 @@ public abstract class ClasspathFontPeer
 
   protected static boolean isLogicalFontName(String name)
   {
+    return false;
+/*
     String uname = name.toUpperCase ();
     return (uname.equals ("SANSSERIF") ||
             uname.equals ("SERIF") ||
@@ -165,6 +167,7 @@ public abstract class ClasspathFontPeer
             uname.equals ("DIALOG") ||
             uname.equals ("DIALOGINPUT") ||
             uname.equals ("DEFAULT"));
+*/
   }
 
   protected static String logicalFontNameToFaceName (String name)
