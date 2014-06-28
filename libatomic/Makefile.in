@@ -244,6 +244,7 @@ libexecdir = @libexecdir@
 libtool_VERSION = @libtool_VERSION@
 localedir = @localedir@
 localstatedir = @localstatedir@
+lt_host_flags = @lt_host_flags@
 mandir = @mandir@
 mkdir_p = @mkdir_p@
 multi_basedir = @multi_basedir@
@@ -285,7 +286,7 @@ noinst_LTLIBRARIES = libatomic_convenience.la
 @LIBAT_BUILD_VERSIONED_SHLIB_GNU_TRUE@@LIBAT_BUILD_VERSIONED_SHLIB_TRUE@libatomic_version_dep = $(top_srcdir)/libatomic.map
 @LIBAT_BUILD_VERSIONED_SHLIB_SUN_TRUE@@LIBAT_BUILD_VERSIONED_SHLIB_TRUE@libatomic_version_dep = libatomic.map-sun
 libatomic_version_info = -version-info $(libtool_VERSION)
-libatomic_la_LDFLAGS = $(libatomic_version_info) $(libatomic_version_script)
+libatomic_la_LDFLAGS = $(libatomic_version_info) $(libatomic_version_script) $(lt_host_flags)
 libatomic_la_SOURCES = gload.c gstore.c gcas.c gexch.c glfree.c lock.c init.c \
 	fenv.c
 

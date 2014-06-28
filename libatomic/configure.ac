@@ -143,6 +143,7 @@ AC_PROG_INSTALL
 
 # Configure libtool
 AM_PROG_LIBTOOL
+ACX_LT_HOST_FLAGS
 AC_SUBST(enable_shared)
 AC_SUBST(enable_static)
 AM_MAINTAINER_MODE
