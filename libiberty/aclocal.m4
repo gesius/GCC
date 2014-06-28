@@ -15,6 +15,8 @@ AC_CACHE_CHECK([for working strncmp], ac_cv_func_strncmp_works,
 /* Test by Jim Wilson and Kaveh Ghazi.
    Check whether strncmp reads past the end of its string parameters. */
 #include <sys/types.h>
+#include <string.h>
+#include <stdlib.h>
 
 #ifdef HAVE_FCNTL_H
 #include <fcntl.h>
@@ -147,7 +149,9 @@ if test $ac_cv_os_cray = yes; then
 fi
 
 AC_CACHE_CHECK(stack direction for C alloca, ac_cv_c_stack_direction,
-[AC_TRY_RUN([find_stack_direction ()
+[AC_TRY_RUN([
+#include <stdlib.h>
+find_stack_direction ()
 {
   static char *addr = 0;
   auto char dummy;
