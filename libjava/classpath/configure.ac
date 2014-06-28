@@ -64,7 +64,7 @@ case "$host_os" in
 	cp_module=""
 	;;
 	*)
-	cp_module="-module"
+	cp_module="-module -avoid-version"
 	;;
 esac
 
