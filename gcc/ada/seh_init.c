@@ -46,6 +46,7 @@
 #define xmalloc(S) malloc (S)
 
 #else
+#define FLEX_SCANNER	/* do not poison malloc */
 #include "config.h"
 #include "system.h"
 #endif
@@ -71,6 +72,9 @@ extern void Raise_From_Signal_Handler (struct Exception_Data *, const char *)
 
 
 #if defined (_WIN32) || (defined (__CYGWIN__) && defined (__SEH__))
+
+#include <windows.h>
+#include <excpt.h>
 
 /* Prototypes.  */
 extern void _global_unwind2 (void *);
@@ -173,7 +177,7 @@ __gnat_map_SEH (EXCEPTION_RECORD* ExceptionRecord, const char **msg)
     }
 }
 
-#if !(defined (_WIN64) && defined (__SEH__))
+#if !(defined (__x86_64__) && defined (__SEH__))
 
 EXCEPTION_DISPOSITION
 __gnat_SEH_error_handler (struct _EXCEPTION_RECORD* ExceptionRecord,
@@ -192,7 +196,7 @@ __gnat_SEH_error_handler (struct _EXCEPTION_RECORD* ExceptionRecord,
       msg = "unhandled signal";
     }
 
-#if ! defined (_WIN64)
+#if !defined(_WIN64) && !defined(__CYGWIN__)
   /* This call is important as it avoids locking the second time we catch a
      signal. Note that this routine is documented as internal to Windows and
      should not be used.  */
@@ -203,9 +207,9 @@ __gnat_SEH_error_handler (struct _EXCEPTION_RECORD* ExceptionRecord,
 
   Raise_From_Signal_Handler (exception, msg);
 }
-#endif /* !(defined (_WIN64) && defined (__SEH__)) */
+#endif /* !(defined (__x86_64__) && defined (__SEH__)) */
 
-#if defined (_WIN64)
+#if defined (__x86_64__)
 /*  On x86_64 windows exception mechanism is no more based on a chained list
     of handlers addresses on the stack. Instead unwinding information is used
     to retrieve the exception handler (similar to ZCX GCC mechanism). So in
@@ -258,7 +262,7 @@ void __gnat_install_SEH_handler (void *eh ATTRIBUTE_UNUSED)
      just above.  */
 }
 
-#else /* defined (_WIN64) */
+#else /* defined (__x86_64__) */
 /*  Install the Win32 SEH exception handler. Note that the caller must have
     allocated 8 bytes on the stack and pass the pointer to this stack
     space. This is needed as the SEH exception handler must be on the stack of
@@ -291,7 +295,7 @@ __gnat_install_SEH_handler (void *ER)
 }
 #endif
 
-#else /* defined (_WIN32) */
+#else /* defined (_WIN32) || defined(__CYGWIN__) */
 /* For all non Windows targets we provide a dummy SEH install handler.  */
 void __gnat_install_SEH_handler (void *eh ATTRIBUTE_UNUSED)
 {

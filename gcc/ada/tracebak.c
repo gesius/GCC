@@ -95,7 +95,7 @@ extern void (*Unlock_Task) (void);
  *-- Target specific implementations --*
  *-------------------------------------*/
 
-#if defined (_WIN64) && defined (__SEH__)
+#if (defined (_WIN64) || defined(__CYGWIN__)) && defined (__SEH__)
 
 #include <windows.h>
 
