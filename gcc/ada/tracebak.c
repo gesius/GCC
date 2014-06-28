@@ -107,7 +107,7 @@ extern void (*Unlock_Task) (void);
 
 #include "tb-ivms.c"
 
-#elif defined (_WIN64) && defined (__SEH__)
+#elif (defined (_WIN64) || defined(__CYGWIN__)) && defined (__SEH__)
 
 #include <windows.h>
 
