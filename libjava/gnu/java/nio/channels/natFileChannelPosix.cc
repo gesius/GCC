@@ -386,7 +386,7 @@ FileChannelImpl::available (void)
 
 #if defined (FIONREAD)
   r = ::ioctl (fd, FIONREAD, &num);
-  if (r == -1 && errno == ENOTTY)
+  if (r == -1 && (errno == ENOTTY || errno == EINVAL))
     {
       // If the ioctl doesn't work, we don't care.
       r = 0;
