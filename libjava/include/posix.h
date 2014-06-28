@@ -42,11 +42,17 @@ details.  */
 #include <java/util/Properties.h>
 
 // Prefix and suffix for shared libraries.
+#ifdef __CYGWIN__
+#define _Jv_platform_solib_prefix "cyg"
+#else
 #define _Jv_platform_solib_prefix "lib"
+#endif
 #if defined(__APPLE__) && defined(__MACH__)
 #define _Jv_platform_solib_suffix ".dylib"
 #elif defined(HPUX) && defined(HP_PA)
 #define _Jv_platform_solib_suffix ".sl"
+#elif defined(__CYGWIN__)
+#define _Jv_platform_solib_suffix ".dll"
 #else
 #define _Jv_platform_solib_suffix ".so"
 #endif

@@ -32,7 +32,11 @@ void
 java::net::VMURLConnection::init ()
 {
 #if defined (HAVE_MAGIC_T) && defined (HAVE_MAGIC_H) && defined (USE_LTDL)
+#ifdef __CYGWIN__
+  lt_dlhandle handle = lt_dlopenext ("cygmagic-1.dll");
+#else
   lt_dlhandle handle = lt_dlopenext ("libmagic.so");
+#endif
   if (!handle)
     return;
 
