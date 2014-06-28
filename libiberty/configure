@@ -6077,6 +6077,7 @@ else
 else
   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
+#include <stdlib.h>
 find_stack_direction ()
 {
   static char *addr = 0;
@@ -6846,6 +6847,8 @@ else
 /* Test by Jim Wilson and Kaveh Ghazi.
    Check whether strncmp reads past the end of its string parameters. */
 #include <sys/types.h>
+#include <string.h>
+#include <stdlib.h>
 
 #ifdef HAVE_FCNTL_H
 #include <fcntl.h>
