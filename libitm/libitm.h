@@ -45,6 +45,7 @@ extern "C" {
 
 #define ITM_NORETURN	__attribute__((noreturn))
 #define ITM_PURE __attribute__((transaction_pure))
+#define ITM_SYSV __attribute__((sysv_abi))
 
 /* The following are externally visible definitions and functions, though
    only very few of these should be called by user code.  */
@@ -145,7 +146,7 @@ typedef uint64_t _ITM_transactionId_t;	/* Transaction identifier */
 
 extern _ITM_transactionId_t _ITM_getTransactionId(void) ITM_REGPARM;
 
-extern uint32_t _ITM_beginTransaction(uint32_t, ...) ITM_REGPARM;
+extern uint32_t _ITM_beginTransaction(uint32_t, ...) ITM_REGPARM ITM_SYSV;
 
 extern void _ITM_abortTransaction(_ITM_abortReason) ITM_REGPARM ITM_NORETURN;
 
