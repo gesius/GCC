@@ -77,12 +77,14 @@ along with GCC; see the file COPYING3.  If not see
 #undef LIB_SPEC
 #define LIB_SPEC "\
   %{pg:-lgmon} \
+  %{pthread: } \
   -lcygwin \
   %{mwindows:-lgdi32 -lcomdlg32} \
   -ladvapi32 -lshell32 -luser32 -lkernel32"
 
 /* To implement C++ function replacement we always wrap the cxx
    malloc-like operators.  See N2800 #17.6.4.6 [replacement.functions] */
+#undef CXX_WRAP_SPEC_LIST
 #define CXX_WRAP_SPEC_LIST " \
   --wrap _Znwj \
   --wrap _Znaj \
@@ -120,7 +122,9 @@ along with GCC; see the file COPYING3.  If not see
   %{shared: --shared} %{mdll:--dll} \
   %{static:-Bstatic} %{!static:-Bdynamic} \
   %{shared|mdll: --enable-auto-image-base -e __cygwin_dll_entry@12} \
-  --dll-search-prefix=cyg -tsaware"
+  --dll-search-prefix=cyg \
+  %{rdynamic: --export-all-symbols} \
+  %{!shared: %{!mdll: --large-address-aware -tsaware"
 
 /* Binutils does not handle weak symbols from dlls correctly.  For now,
    do not use them unnecessarily in gthr-posix.h.  */
