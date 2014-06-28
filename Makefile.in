@@ -1629,7 +1629,6 @@ install-info-target: maybe-install-info-target-libgo
 install-info-target: maybe-install-info-target-libtermcap
 install-info-target: maybe-install-info-target-winsup
 install-info-target: maybe-install-info-target-libgloss
-install-info-target: maybe-install-info-target-libffi
 install-info-target: maybe-install-info-target-libjava
 install-info-target: maybe-install-info-target-zlib
 install-info-target: maybe-install-info-target-boehm-gc
@@ -1714,7 +1713,6 @@ install-pdf-target: maybe-install-pdf-target-libgo
 install-pdf-target: maybe-install-pdf-target-libtermcap
 install-pdf-target: maybe-install-pdf-target-winsup
 install-pdf-target: maybe-install-pdf-target-libgloss
-install-pdf-target: maybe-install-pdf-target-libffi
 install-pdf-target: maybe-install-pdf-target-libjava
 install-pdf-target: maybe-install-pdf-target-zlib
 install-pdf-target: maybe-install-pdf-target-boehm-gc
@@ -1799,7 +1797,6 @@ install-html-target: maybe-install-html-target-libgo
 install-html-target: maybe-install-html-target-libtermcap
 install-html-target: maybe-install-html-target-winsup
 install-html-target: maybe-install-html-target-libgloss
-install-html-target: maybe-install-html-target-libffi
 install-html-target: maybe-install-html-target-libjava
 install-html-target: maybe-install-html-target-zlib
 install-html-target: maybe-install-html-target-boehm-gc
@@ -1884,7 +1881,6 @@ installcheck-target: maybe-installcheck-target-libgo
 installcheck-target: maybe-installcheck-target-libtermcap
 installcheck-target: maybe-installcheck-target-winsup
 installcheck-target: maybe-installcheck-target-libgloss
-installcheck-target: maybe-installcheck-target-libffi
 installcheck-target: maybe-installcheck-target-libjava
 installcheck-target: maybe-installcheck-target-zlib
 installcheck-target: maybe-installcheck-target-boehm-gc
@@ -2524,7 +2520,6 @@ install-target:  \
     maybe-install-target-libtermcap \
     maybe-install-target-winsup \
     maybe-install-target-libgloss \
-    maybe-install-target-libffi \
     maybe-install-target-libjava \
     maybe-install-target-zlib \
     maybe-install-target-boehm-gc \
@@ -2629,7 +2624,6 @@ install-strip-target:  \
     maybe-install-strip-target-libtermcap \
     maybe-install-strip-target-winsup \
     maybe-install-strip-target-libgloss \
-    maybe-install-strip-target-libffi \
     maybe-install-strip-target-libjava \
     maybe-install-strip-target-zlib \
     maybe-install-strip-target-boehm-gc \
