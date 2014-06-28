@@ -986,7 +986,12 @@ CND(VEOL2, "Alternative EOL")
 
 #endif /* HAVE_TERMIOS */
 
-#ifdef __MINGW32__
+#ifdef __CYGWIN__
+#define RTS_CONTROL_ENABLE 0x1
+#define DTR_CONTROL_ENABLE 0x1
+#endif
+
+#if defined (__CYGWIN__) || defined (__MINGW32__)
 CNU(DTR_CONTROL_ENABLE, "Enable DTR flow ctrl")
 CNU(RTS_CONTROL_ENABLE, "Enable RTS flow ctrl")
 #endif
