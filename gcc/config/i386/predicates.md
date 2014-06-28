@@ -164,6 +164,7 @@
 	switch (XINT (XEXP (op, 0), 1))
 	  {
 	  case UNSPEC_GOTPCREL:
+	    if (TARGET_PECOFF) break;
 	  case UNSPEC_DTPOFF:
 	  case UNSPEC_GOTNTPOFF:
 	  case UNSPEC_NTPOFF:
@@ -268,6 +269,10 @@
       /* TLS symbols are not constant.  */
       if (SYMBOL_REF_TLS_MODEL (op))
 	return false;
+      /* Dll-imported symbols are always external.  */
+      if (TARGET_DLLIMPORT_DECL_ATTRIBUTES && SYMBOL_REF_DLLIMPORT_P (op))
+        return false;
+
       return (ix86_cmodel == CM_SMALL
 	      || (ix86_cmodel == CM_MEDIUM
 		  && !SYMBOL_REF_FAR_ADDR_P (op)));
