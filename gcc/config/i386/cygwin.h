@@ -40,7 +40,7 @@ along with GCC; see the file COPYING3.  If not see
 #define STARTFILE_SPEC "\
   %{!shared: %{!mdll: crt0%O%s \
   %{pg:gcrt0%O%s}}}\
-  crtbegin.o%s"
+  %{shared:crtbeginS.o%s;:crtbegin.o%s}"
 
 #undef ENDFILE_SPEC
 #define ENDFILE_SPEC \
