@@ -347,7 +347,7 @@ EOF
 	CHECKREFSPEC=-fcheck-references
 	DIVIDESPEC=-fuse-divide-subroutine
 	;;
-  *-cygwin*)
+  *-cygwin* | *-msys*)
   	# The cygwin linker doesn't do 8-byte alignment by default, so
 	# disable hash synchronization for now.
 	enable_hash_synchronization_default=no
@@ -365,7 +365,7 @@ EOF
 esac
 
 case "${host}" in
-  *-cygwin* | *-mingw*)
+  *-cygwin* | *-msys* | *-mingw*)
 	fallback_backtrace_h=sysdep/i386/backtrace.h  
 	# We need a frame pointer on Windows, so override BACKTRACESPEC
   	BACKTRACESPEC=

@@ -42,7 +42,9 @@ details.  */
 #include <java/util/Properties.h>
 
 // Prefix and suffix for shared libraries.
-#ifdef __CYGWIN__
+#ifdef __MSYS__
+#define _Jv_platform_solib_prefix "msys-"
+#elseif __CYGWIN__
 #define _Jv_platform_solib_prefix "cyg"
 #else
 #define _Jv_platform_solib_prefix "lib"

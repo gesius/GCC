@@ -1,4 +1,4 @@
-/* { dg-options "-Wl,--stack,12582912" { target *-*-mingw* *-*-cygwin* } } */
+/* { dg-options "-Wl,--stack,12582912" { target *-*-mingw* *-*-cygwin* *-*-msys* } } */
 /* { dg-require-effective-target size32plus } */
 
 void abort (void);

@@ -2,7 +2,7 @@
 // { dg-do compile { target fpic } }
 // { dg-options "-O2 -fpic -fno-rtti" }
 // { dg-skip-if "requires unsupported run-time relocation" { spu-*-* } { "*" } { "" } }
-// { dg-skip-if "No Windows PIC" { *-*-mingw* *-*-cygwin } { "*" } { "" } }
+// { dg-skip-if "No Windows PIC" { *-*-mingw* *-*-cygwin *-*-msys } { "*" } { "" } }
 // Origin: Jakub Jelinek <jakub@redhat.com>
 
 struct S

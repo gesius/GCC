@@ -1,7 +1,7 @@
 /* { dg-do run } */
 /* { dg-require-effective-target ia32 } */
 /* { dg-options "-O2 -fomit-frame-pointer -fno-asynchronous-unwind-tables -mpush-args -mno-accumulate-outgoing-args" } */
-/* { dg-options "-O2 -fomit-frame-pointer -fno-asynchronous-unwind-tables -mpush-args" { target *-*-mingw* *-*-cygwin* } } */
+/* { dg-options "-O2 -fomit-frame-pointer -fno-asynchronous-unwind-tables -mpush-args" { target *-*-mingw* *-*-cygwin* *-*-msys* } } */
 
 void abort (void);
 

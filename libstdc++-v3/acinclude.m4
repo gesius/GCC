@@ -643,7 +643,7 @@ AC_DEFUN([GLIBCXX_CONFIGURE_TESTSUITE], [
   if $GLIBCXX_IS_NATIVE && test $is_hosted = yes &&
      test $enable_symvers != no; then
     case "$host" in
-      *-*-cygwin*)
+      *-*-cygwin* | *-*-msys*)
 	enable_abi_check=no ;;
       *)
 	enable_abi_check=yes ;;

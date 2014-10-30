@@ -1,4 +1,4 @@
-// { dg-do compile { target i?86-*-cygwin* i?86-*-mingw* x86_64-*-mingw* } }
+// { dg-do compile { target i?86-*-cygwin* i?86-*-msys* i?86-*-mingw* x86_64-*-mingw* } }
 //  Mark class static members as dllimport.
 
 struct Baz

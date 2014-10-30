@@ -1,4 +1,4 @@
-// { dg-do run { target *-*-freebsd* *-*-netbsd* *-*-linux* *-*-gnu* *-*-solaris* *-*-cygwin *-*-darwin* } }
+// { dg-do run { target *-*-freebsd* *-*-netbsd* *-*-linux* *-*-gnu* *-*-solaris* *-*-cygwin *-*-msys *-*-darwin* } }
 // { dg-options "-pthread" { target *-*-freebsd* *-*-netbsd* *-*-linux* *-*-gnu* } }
 // { dg-options "-pthreads" { target *-*-solaris* } }
 // { dg-require-namedlocale "en_US" }

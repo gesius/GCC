@@ -1,5 +1,5 @@
 // Test that inline functions are exported with -fkeep-inline-functions.
-// { dg-do compile { target i?86-*-cygwin* i?86-*-mingw* x86_64-*-mingw*} }
+// { dg-do compile { target i?86-*-cygwin* i?86-*-msys* i?86-*-mingw* x86_64-*-mingw*} }
 // { dg-options -fkeep-inline-functions } 
 
 __attribute__((dllexport)) inline int foo (int a) { return a;}

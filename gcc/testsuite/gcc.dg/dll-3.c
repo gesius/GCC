@@ -1,7 +1,7 @@
 /* Ensure dllexport overrides dllimport.  */
 
 /* { dg-do compile { target arm*-*-pe* } } */
-/* { dg-do compile { target i?86-pc-cygwin } } */
+/* { dg-do compile { target i?86-pc-cygwin i?86-pc-msys } } */
 /* { dg-do compile { target i?86-*-mingw* x86_64-*-mingw*} } */
 
 __declspec (dllimport) int foo1 ();

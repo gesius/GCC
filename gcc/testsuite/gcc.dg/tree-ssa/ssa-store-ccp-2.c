@@ -10,5 +10,5 @@ int f(void)
 
 /* There should be a reference to conststaticvariable since it may
    may be overriden at link time.  */
-/* { dg-final { scan-tree-dump-times "conststaticvariable" 1 "optimized" { xfail { *-*-mingw* *-*-cygwin* } } } } */
+/* { dg-final { scan-tree-dump-times "conststaticvariable" 1 "optimized" { xfail { *-*-mingw* *-*-cygwin* *-*-msys* } } } } */
 /* { dg-final { cleanup-tree-dump "optimized" } } */

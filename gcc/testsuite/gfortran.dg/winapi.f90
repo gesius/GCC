@@ -1,4 +1,4 @@
-! { dg-do run { target *-*-cygwin* *-*-mingw* } }
+! { dg-do run { target *-*-cygwin* *-*-msys* *-*-mingw* } }
 ! { dg-options "-lkernel32" }
 ! Test case provided by Dennis Wassel.
 
