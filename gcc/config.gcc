@@ -1578,6 +1578,7 @@ i[34567]86-*-cygwin*)
 	fi
 	default_use_cxa_atexit=yes
 	use_gcc_stdint=wrap
+	default_use_cxa_atexit=yes
 	;;
 x86_64-*-cygwin*)
 	need_64bit_isa=yes
@@ -1887,6 +1888,7 @@ mep-*-*)
 		with_headers=yes
 	fi
 	use_gcc_stdint=wrap
+	default_use_cxa_atexit=yes
 	;;
 microblaze*-linux*)
 	case $target in
