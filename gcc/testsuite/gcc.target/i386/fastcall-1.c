@@ -1,4 +1,4 @@
-/* { dg-do compile { target i?86-*-mingw32* i?86-*-cygwin* } } */
+/* { dg-do compile { target i?86-*-mingw32* i?86-*-cygwin* i?86-*-msys* } } */
 /* { dg-options "-std=gnu89" } */
 
 void

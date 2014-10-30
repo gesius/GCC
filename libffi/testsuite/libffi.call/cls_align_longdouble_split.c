@@ -4,10 +4,10 @@
    PR:		none.
    Originator:	<hos@tamanegi.org> 20031203	 */
 
-/* { dg-excess-errors "no long double format" { xfail x86_64-*-mingw* x86_64-*-cygwin* } } */
+/* { dg-excess-errors "no long double format" { xfail x86_64-*-mingw* x86_64-*-cygwin* x86_64-*-msys* } } */
 /* { dg-do run { xfail strongarm*-*-* xscale*-*-* } } */
 /* { dg-options -mlong-double-128 { target powerpc64*-*-linux* } } */
-/* { dg-output "" { xfail x86_64-*-mingw* x86_64-*-cygwin* } } */
+/* { dg-output "" { xfail x86_64-*-mingw* x86_64-*-cygwin* x86_64-*-msys* } } */
 
 #include "ffitest.h"
 

@@ -1,4 +1,4 @@
-// { dg-do compile { target i?86-pc-cygwin } }
+// { dg-do compile { target i?86-pc-cygwin i?86-pc-msys } }
 // { dg-do compile { target i?86-*-mingw* x86_64-*-mingw* } }
 
 // Check for errors with invalid usage of selectany attribute.

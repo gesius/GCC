@@ -4,7 +4,7 @@
    PR:		none.
    Originator:	<ktietz@redhat.com> */
 
-/* { dg-do run { target i?86-*-cygwin* i?86-*-mingw* } } */
+/* { dg-do run { target i?86-*-cygwin* i?86-*-msys* i?86-*-mingw* } } */
 #include "ffitest.h"
 
 static void

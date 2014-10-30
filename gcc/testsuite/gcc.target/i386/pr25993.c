@@ -1,5 +1,5 @@
 /* { dg-do assemble } */
-/* { dg-skip-if "" { "*-*-darwin*" "*-*-mingw*" "*-*-cygwin*" } { "*" } { "" } } */
+/* { dg-skip-if "" { "*-*-darwin*" "*-*-mingw*" "*-*-cygwin*" "*-*-msys*" } { "*" } { "" } } */
 /* { dg-options "-std=c99 -x assembler-with-cpp" } */
 
 #ifndef __ASSEMBLER__

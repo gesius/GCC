@@ -206,7 +206,7 @@ case "$THREADS" in
      *-*-irix*)
 	AC_DEFINE(GC_IRIX_THREADS,1,[support for Irix pthreads])
 	;;
-     *-*-cygwin*)
+     *-*-cygwin* | *-*-msys*)
 	AC_DEFINE(GC_WIN32_THREADS,1,[support for win32 threads])
 	;;
      *-*-darwin*)

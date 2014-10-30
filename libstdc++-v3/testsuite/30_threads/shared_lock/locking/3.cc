@@ -1,7 +1,7 @@
-// { dg-do run { target *-*-freebsd* *-*-dragonfly* *-*-netbsd* *-*-linux* *-*-solaris* *-*-cygwin *-*-darwin* powerpc-ibm-aix* } }
+// { dg-do run { target *-*-freebsd* *-*-dragonfly* *-*-netbsd* *-*-linux* *-*-solaris* *-*-cygwin *-*-msys *-*-darwin* powerpc-ibm-aix* } }
 // { dg-options " -std=gnu++14 -pthread" { target *-*-freebsd* *-*-dragonfly* *-*-netbsd* *-*-linux* powerpc-ibm-aix* } }
 // { dg-options " -std=gnu++14 -pthreads" { target *-*-solaris* } }
-// { dg-options " -std=gnu++14 " { target *-*-cygwin *-*-darwin* } }
+// { dg-options " -std=gnu++14 " { target *-*-cygwin *-*-msys *-*-darwin* } }
 // { dg-require-cstdint "" }
 // { dg-require-gthreads-timed "" }
 

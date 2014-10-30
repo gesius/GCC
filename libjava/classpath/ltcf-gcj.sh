@@ -42,7 +42,7 @@ lt_simple_link_test_code='public class conftest { public static void main(String
 
 ## Linker Characteristics
 case $host_os in
-cygwin* | mingw*)
+cygwin* | msys* | mingw*)
   # FIXME: the MSVC++ port hasn't been tested in a loooong time
   # When not using gcc, we currently assume that we are using
   # Microsoft Visual C++.
@@ -101,7 +101,7 @@ EOF
     fi
     ;;
 
-  cygwin* | mingw*)
+  cygwin* | msys* | mingw*)
     # hardcode_libdir_flag_spec is actually meaningless, as there is
     # no search path for DLLs.
     hardcode_libdir_flag_spec='-L$libdir'
@@ -123,6 +123,11 @@ EOF
     dll_entry=__cygwin_dll_entry@12
     dll_exclude_symbols=DllMain@12,_cygwin_dll_entry@12,_cygwin_noncygwin_dll_entry@12~
     case $host_os in
+    msys*)
+      # mingw values
+      dll_entry=__msys_dll_entry@12
+      dll_exclude_symbols=DllMain@12,_msys_dll_entry@12,_msys_nonmsys_dll_entry@12~
+      ;;
     mingw*)
       # mingw values
       dll_entry=_DllMainCRTStartup@12
@@ -132,7 +137,7 @@ EOF
 
     # mingw and cygwin differ, and it's simplest to just exclude the union
     # of the two symbol sets.
-    dll_exclude_symbols=DllMain@12,_cygwin_dll_entry@12,_cygwin_noncygwin_dll_entry@12,DllMainCRTStartup@12,DllEntryPoint@12
+    dll_exclude_symbols=DllMain@12,_cygwin_dll_entry@12,_cygwin_noncygwin_dll_entry@12,_msys_dll_entry@12,_msys_nonmsys_dll_entry@12,DllMainCRTStartup@12,DllEntryPoint@12
 
     # recent cygwin and mingw systems supply a stub DllMain which the user
     # can override, but on older systems we have to supply one (in ltdll.c)
@@ -231,7 +236,7 @@ EOF
     hardcode_libdir_flag_spec='${wl}--rpath ${wl}$libdir'
     export_dynamic_flag_spec='${wl}--export-dynamic'
     case $host_os in
-    cygwin* | mingw*)
+    cygwin* | msys* | mingw*)
       # dlltool doesn't understand --whole-archive et. al.
       whole_archive_flag_spec=
       ;;
@@ -361,7 +366,7 @@ else
     ld_shlibs=no
     ;;
 
-  cygwin* | mingw*)
+  cygwin* | msys* | mingw*)
     # When not using gcc, we currently assume that we are using
     # Microsoft Visual C++.
     # hardcode_libdir_flag_spec is actually meaningless, as there is
@@ -663,7 +668,7 @@ fi
       # DJGPP does not suppot shared libraries at all
       ac_cv_prog_cc_pic=
       ;;
-    cygwin* | mingw* | os2*)
+    cygwin* | msys* | mingw* | os2*)
       # This hack is so that the source file can tell whether it is being
       # built for inclusion in a dll (and should export symbols for example).
       ac_cv_prog_cc_pic='-DDLL_EXPORT'

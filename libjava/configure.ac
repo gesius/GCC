@@ -419,7 +419,7 @@ if test -n "${with_cross_host}"; then
   GCJ_FOR_ECJX="${with_cross_host}-gcj"
   GCC_FOR_ECJX="${with_cross_host}-gcc"
   case "${with_cross_host}" in
-     *mingw* | *cygwin*)
+     *mingw* | *cygwin* | *msys*)
          cross_host_exeext=.exe
      ;;
   esac
@@ -941,7 +941,7 @@ arm*-*-linux-*)
     LIBSTDCXXSPEC=-lstdc++
     LIBGCJTESTSPEC="-L`${PWDCMD-pwd}`/.libs -L`${PWDCMD-pwd}`/../libstdc++-v3/src/.libs -rpath `${PWDCMD-pwd}`/.libs:`${PWDCMD-pwd}`/../libstdc++-v3/src/.libs -lstdc++"
     ;;
-*-*-cygwin)
+*-*-cygwin | *-*-msys)
     extra_ldflags_libjava=-liconv
     ;;
 *-*-mingw*)
@@ -1061,7 +1061,7 @@ THREADSTARTFILESPEC=
 case "$THREADS" in
  posix)
     case "$host" in
-     *-*-cygwin*)
+     *-*-cygwin* | *-*-msys*)
 	# Don't set THREADLIBS here.  Cygwin doesn't have -lpthread.
 	;;
      *-*-freebsd[[34]].*)
@@ -1999,7 +1999,7 @@ then
   if test "x${host_cpu}" = "x"
   then
     case ${host} in
-      *-mingw* | *-cygwin*)
+      *-mingw* | *-cygwin* | *-msys*)
         host_cpu=x86;;
       i486-* | i586-* | i686-*)
         host_cpu=i386;;
@@ -2016,7 +2016,7 @@ then
   if test "x${host_os}" = "x"
   then
     case ${host} in
-      *-mingw* | *-cygwin*)
+      *-mingw* | *-cygwin* | *-msys*)
         host_os=win32;;
       *-linux*)
         host_os=linux;;

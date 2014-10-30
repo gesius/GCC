@@ -3,7 +3,7 @@
 // { dg-options "-O2" }
 // Cygwin and mingw default to MASK_ALIGN_DOUBLE. Override to ensure
 // 4-byte alignment.
-// { dg-additional-options "-mno-align-double" { target i?86-*-cygwin* i?86-*-mingw* } }
+// { dg-additional-options "-mno-align-double" { target i?86-*-cygwin* i?86-*-msys* i?86-*-mingw* } }
 // As for mingw target the ms-bitfield switch is activated by default,
 // make sure for this test that it is disabled.
 // { dg-additional-options "-mno-ms-bitfields" { target i?86-*-mingw* } }

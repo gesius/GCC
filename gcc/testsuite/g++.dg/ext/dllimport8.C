@@ -2,7 +2,7 @@
 //  Ignore  dllimport of static members if marked inlined.
 //  or if definition follows  declaration in dllimported class.
 
-// { dg-do compile { target i?86-*-cygwin* i?86-*-mingw* x86_64-*-mingw* } }
+// { dg-do compile { target i?86-*-cygwin* i?86-*-msys* i?86-*-mingw* x86_64-*-mingw* } }
 // { dg-options { -Wall -W } }
 
 struct  __attribute__((dllimport)) Foo

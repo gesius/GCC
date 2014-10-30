@@ -12,6 +12,9 @@ target=fixinc.sh
 # Check for special fix rules for particular targets
 case $machine in
     i?86-*-cygwin* | \
+    x86_64-*-cygwin* | \
+    i?86-*-msys* | \
+    x86_64-*-msys* | \
     i?86-*-mingw32* | \
     x86_64-*-mingw32* | \
     i?86-*-interix* | \

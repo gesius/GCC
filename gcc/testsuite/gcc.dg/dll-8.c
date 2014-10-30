@@ -1,4 +1,4 @@
-/* { dg-do compile { target i?86-pc-cygwin } } */
+/* { dg-do compile { target i?86-pc-cygwin i?86-pc-msys } } */
 /* { dg-do compile { target i?86-*-mingw* x86_64-*-mingw*} } */
 /* { dg-options "-O3 -fwhole-program" } */
 /* { dg-final { scan-assembler "foo1" } } */

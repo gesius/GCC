@@ -823,6 +823,9 @@ EOF
     *:MINGW64*:*)
 	echo ${UNAME_MACHINE}-pc-mingw64
 	exit ;;
+    i*:MSYS*:*)
+	echo ${UNAME_MACHINE}-pc-msys
+	exit ;;
     *:MINGW*:*)
 	echo ${UNAME_MACHINE}-pc-mingw32
 	exit ;;
@@ -865,6 +868,9 @@ EOF
 	exit ;;
     amd64:CYGWIN*:*:* | x86_64:CYGWIN*:*:*)
 	echo x86_64-unknown-cygwin
+	exit ;;
+    amd64:MSYS*:*:* | x86_64:MSYS*:*:*)
+	echo x86_64-unknown-msys
 	exit ;;
     p*:CYGWIN*:*)
 	echo powerpcle-unknown-cygwin
